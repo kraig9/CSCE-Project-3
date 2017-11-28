@@ -7,23 +7,42 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    
+ <script language="javascript">
+    //localStorage.setItem("storageName",getInput); use later for spotify api to save the artist id or song id.
+function myFunction() {
+    var elem = document.getElementById("selec");
+   if(elem.value === "Artist"){
+       var obj = JSON.parse('{ "name":"Kanye West", "age":30, "city":"New York"}');
+       localStorage.setItem("an",obj.name);
+       window.open ('Artist.html','_self',false)
+   }
+    else if(elem.value === "Song"){
+        window.open ('Song.html','_self',false)
+    }
+   
+}
+</script>
+    
+    
 </head>
 <div style="text-align:center;">
-<h1> More Music</h1>
+<h1>More Music</h1>
 </div>
+
 <div class="input-group" style=" padding-top: 225px;">
-      <select class="form-control form-control-sm">
-  <option>Artist</option>
-<option>Song</option>
+<select id="selec" name="selec" class="form-control form-control-sm">
+<option value="Artist">Artist</option>
+<option value="Song">Song</option>
 </select>
   <span class="input-group-addon" id="basic-addon1"> 
     
   </span>
   <input type="text" class="form-control" placeholder="Artistname" aria-label="Artistname" aria-describedby="basic-addon1">
 </div>
-<br>
 <div style="text-align:center;">
 <div class="btn-group" role="group" aria-label="Basic example" style=" margin: auto;">
- <a href="Artist.html"> <button type="button" id = "btn search-btn" class="btn btn-secondary">Search</button></a>
+  <button type="button" id = "btn1" class="btn btn-secondary" onclick="myFunction()">Search</button>
 </div>
-</div>
+</div

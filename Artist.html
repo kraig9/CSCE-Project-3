@@ -7,16 +7,27 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+     <script language="javascript">
+    //localStorage.setItem("storageName",getInput); use later for spotify api to save the artist id or song id.
+window.onload = function myFunction() {
+    var elem = document.getElementById("artname");
+    elem.textContent = localStorage.getItem("an");
+}
+    </script>
 </head>
+
+
+
 <div style="text-align:center;">
-<img src="Kanye-chain.jpg" style ="height:300px; width:400px; text-align:center">
+<img src="images/Kanye-chain.jpg" style ="height:300px; width:400px; text-align:center">
 </div>
 <div style="text-align:center;">
-<h1> Kanye West </h1>
+<h1 id="artname" onload="myFunction()">K</h1>
 </div>
 
 <div style="text-align:center;">
-<h6>Popularity</h6>
+<h4>Popularity</h4>
 </div>
 
 <div style="text-align:center; padding-left:20%">
