@@ -8,9 +8,16 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+
+<body>
+<!-- This is a comment 
 <div style="text-align:center;">
 <img src="680d4985b1fccdf554ab887abb63a453.1000x1000x1.jpg" style ="height:300px; width:400px; text-align:center">
 </div>
+-->
+
+
+
 <div style="text-align:center;">
 <h1> Flashing Lights </h1>
 </div>
@@ -30,6 +37,81 @@
 
 <div style="text-align:center;">
 <div class="btn-group" role="group" aria-label="Basic example" style="text-align:center">
-    <a href="Recommendations.html"><button type="button" id = "btn search-btn" class="btn btn-secondary">Get Recommendations</button></a>
+    <a href="Recommendations.html"><button type="button" id = "btn-search-btn" class="btn btn-secondary">Get Recommendations</button></a>
+	<br>
+	<br>
 </div>
 </div>
+<div style="text-align:center;">
+	<button type="button" id = "play_btn" class="btn btn-secondary">Play</button
+<div id="results">
+</div>
+</div>
+<script src="https://apis.google.com/js/client.js"></script>
+</body>
+
+ <script language="javascript">
+ 
+ 
+ $(document).ready(function() {
+    $('#play_btn').on('click', function(event) {
+	
+		$.ajax({
+			type: 'GET',
+			url: "https://www.googleapis.com/youtube/v3/search?q=Despacito&maxResults=1&type=video&key=AIzaSyAZTXsjpn0u4oMKU65t-92Nxt6vg3tQecc&part=snippet",
+			dataType: "json",
+			success: function(resultData) {
+				//var result = $.parseJSON(resultData);
+				//console.log(resultData.items.id);
+				alert(resultData.items[id.videoId]);
+				//var result = $.parseJSON(resultData.items);
+				//console.log(result.id.videoId);
+				//alert(result.id.videoId);
+
+				
+			},
+			
+			error: function(){
+				alert("Did not work");
+				console.log("Error retrieving spotify API");
+			}
+			
+			
+		});
+
+		//saveData.error(function() { alert("Something went wrong"); });
+        
+    });
+ });
+ /*
+	$(function(){
+		$("form").on("submit", function(e){
+			e.preventDefault();
+			var request = gapi.client.youtube.search.list({
+				part: "snippet",
+				type: "video",
+				q: encodeURIComponent($("#search_vid").val()).replace(/%20/g, "+"),
+				maxResults:1
+			
+			});
+			request.execute(function(response) {
+				console.log(response);
+			});
+		
+		});
+		
+	});
+	
+	function init() {
+		gapi.client.setApiKey("AIzaSyAZTXsjpn0u4oMKU65t-92Nxt6vg3tQecc");
+		gapi.client.load("youtube", "v3", function(){
+		
+		});
+	}
+ */
+ </script>
+
+
+
+
+
