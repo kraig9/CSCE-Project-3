@@ -8,11 +8,14 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
-     <script language="javascript">
+     <script language="javascript" src="app.js">
     //localStorage.setItem("storageName",getInput); use later for spotify api to save the artist id or song id.
 window.onload = function myFunction() {
     var elem = document.getElementById("artname");
-    elem.textContent = localStorage.getItem("an");
+  // go();
+    
+    
+    
 }
     </script>
 </head>
@@ -20,7 +23,7 @@ window.onload = function myFunction() {
 
 
 <div style="text-align:center;">
-<img src="images/Kanye-chain.jpg" style ="height:300px; width:400px; text-align:center">
+<img src="Kanye-chain.jpg" style ="height:300px; width:400px; text-align:center">
 </div>
 <div style="text-align:center;">
 <h1 id="artname" onload="myFunction()">K</h1>
