@@ -13,8 +13,8 @@
     //localStorage.setItem("storageName",getInput); use later for spotify api to save the artist id or song id.
 function myFunction() {
     var elem = document.getElementById("selec");
-   if(elem.value === "Artist"){
-       var obj = JSON.parse('{ "name":"Kanye West", "age":30, "city":"New York"}');
+   if(elem.value === "Artist"){   
+     var obj = JSON.parse('{ "name":"Kanye West", "age":30, "city":"New York"}');
        localStorage.setItem("an",obj.name);
        window.open ('Artist.html','_self',false)
    }
@@ -25,24 +25,31 @@ function myFunction() {
 }
 </script>
     
-    
+
 </head>
-<div style="text-align:center;">
-<h1>More Music</h1>
+<body style="margin:0;">
+<img src="pexels-photo-196652.jpeg" style="height:100%; width:100%;position:absolute;margin:0; z-index:-1">
+    
+<div style="text-align:center">
+<img src=moremusiclogo.png style="">
 </div>
 
-<div class="input-group" style=" padding-top: 225px;">
-<select id="selec" name="selec" class="form-control form-control-sm">
+    
+    
+<div class="input-group" style="">
+<select id="selec" name="selec" class="form-control form-control-sm" style="width:50%; float:right">
 <option value="Artist">Artist</option>
 <option value="Song">Song</option>
 </select>
   <span class="input-group-addon" id="basic-addon1"> 
     
   </span>
-  <input type="text" class="form-control" placeholder="Artistname" aria-label="Artistname" aria-describedby="basic-addon1">
+  <input type="text" class="form-control" placeholder="Artistname" aria-label="Artistname" aria-describedby="basic-addon1" style="width:80%">
 </div>
 <div style="text-align:center;">
+    <p></p>
 <div class="btn-group" role="group" aria-label="Basic example" style=" margin: auto;">
   <button type="button" id = "btn1" class="btn btn-secondary" onclick="myFunction()">Search</button>
 </div>
-</div>
+    </div>
+    </body>
