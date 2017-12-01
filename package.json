@@ -10,6 +10,6 @@
     "request": "~2.34.0"
   },
   "scripts": {
-  "start": "node index.html"
+  "start": "node app.js"
 }
 }
