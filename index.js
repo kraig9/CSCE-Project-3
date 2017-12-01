@@ -1,8 +1,17 @@
 var http = require('http');
-var html = require('index.html')
-//create a server object:
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-    res.write(req.url);
-    res.end();
-}).listen(8080);
+
+var fs = require('fs');
+
+const PORT=8080; 
+
+fs.readFile('./index.html', function (err, html) {
+    
+    if (err) throw err;    
+
+    http.createServer(function(request, response) {  
+        http.use(express.static(__dirname + '/public'));
+        response.writeHeader(200, {"Content-Type": "text/html"});  
+        response.write(html);  
+        response.end();  
+    }).listen(PORT);
+});
