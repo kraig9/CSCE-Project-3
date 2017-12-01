@@ -45,14 +45,16 @@
 </div>
 </div>
 <div style="text-align:center;">
-	<button type="button" id = "play_btn" class="btn btn-secondary">Play Video</button
+	<button type="button" id = "play_btn" class="btn btn-secondary">Show Video</button
 <div id="results">
 </div>
 </div>
 <br>
 <br>
 
-<div id="player"> </div>
+<div style="text-align:center;">
+<div id="player" align="center"> </div>
+</div>
 <script src="https://apis.google.com/js/client.js"></script>
 
 
@@ -64,7 +66,7 @@
 	
 		$.ajax({
 			type: 'GET',
-			url: "https://www.googleapis.com/youtube/v3/search?q=funny&maxResults=1&type=video&key=AIzaSyAZTXsjpn0u4oMKU65t-92Nxt6vg3tQecc&part=snippet",
+			url: "https://www.googleapis.com/youtube/v3/search?q=flashinglights&videoEmbeddable=true&maxResults=2&type=video&key=AIzaSyAZTXsjpn0u4oMKU65t-92Nxt6vg3tQecc&part=snippet",
 			dataType: "json",
 			success: function(resultData) {
 				video_id = resultData.items[0].id.videoId;
@@ -98,12 +100,13 @@ function onYouTubeIframeAPIReady() {
 	player = new YT.Player('player', {
 	height: '290',
 	width: '540',
-	videoId: video_id,
-	
+	videoId: video_id
+	/*
 	events: {
 		'onReady': onPlayerReady,
 		'onStateChange': onPlayerStateChange
 	}
+	*/
 	
 	});
 }
