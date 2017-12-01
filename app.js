@@ -22,14 +22,16 @@ request.post(authOptions, function(error, response, body) {
     // use the access token to access the Spotify Web API
     var token = body.access_token;
     var options = {
-      url: 'https://api.spotify.com/v1/users/jmperezperez',
+      url: 'https://api.spotify.com/v1/search?q=kanye&type=artist&limit=1&offset=0',
       headers: {
         'Authorization': 'Bearer ' + token
       },
       json: true
     };
     request.get(options, function(error, response, body) {
-      console.log(body);
+       console.log(body.artists.items[0].name);
+      console.log(body.artists.items[0].id);
+        console.log(body.artists.items[0].popularity);
     });
   }
 });
