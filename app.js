@@ -1,4 +1,5 @@
-//function go(){console.log("hi")};
+exports = function app () {
+     this.func = function () {
 var request = require('request'); // "Request" library
 
 var client_id = 'aff0745f7a4e45feabfd822fb8b780fd'; // Your client id
@@ -35,3 +36,5 @@ request.post(authOptions, function(error, response, body) {
     });
   }
 });
+     }
+}

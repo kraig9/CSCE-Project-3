@@ -9,21 +9,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
     
- <script language="javascript">
-    //localStorage.setItem("storageName",getInput); use later for spotify api to save the artist id or song id.
-function myFunction() {
-    var elem = document.getElementById("selec");
-   if(elem.value === "Artist"){   
-     var obj = JSON.parse('{ "name":"Kanye West", "age":30, "city":"New York"}');
-       localStorage.setItem("an",obj.name);
-       window.open ('Artist.html','_self',false)
-   }
-    else if(elem.value === "Song"){
-        window.open ('Song.html','_self',false)
-    }
-   
-}
-</script>
+
     
 
 </head>
@@ -44,12 +30,45 @@ function myFunction() {
   <span class="input-group-addon" id="basic-addon1"> 
     
   </span>
-  <input type="text" class="form-control" placeholder="Artistname" aria-label="Artistname" aria-describedby="basic-addon1" style="width:80%">
+  <input id="inp" type="text" class="form-control" placeholder="Artistname" aria-label="Artistname" aria-describedby="basic-addon1" style="width:80%">
 </div>
 <div style="text-align:center;">
     <p></p>
 <div class="btn-group" role="group" aria-label="Basic example" style=" margin: auto;">
-  <button type="button" id = "btn1" class="btn btn-secondary" onclick="myFunction()">Search</button>
+  <button type="button" id = "btn1" class="btn btn-secondary">Search</button>
+    
 </div>
     </div>
+    
+   <script src="/socket.io/socket.io.js"></script>
+<script language="javascript">
+     $('#btn1').on('click', function(event) {
+         var elem = document.getElementById("inp");
+         var elem1 = document.getElementById("selec");
+         console.log(elem.value);
+  var socket = io();
+     socket.on('connect', function(data) {
+    socket.emit('join', elem.value + ' ' + elem1.value);
+         console.log("hello");
+ });
+ socket.on('chat message', function(msg){
+     console.log(msg);
+     if(elem1.value === "Artist"){
+         var str = msg.split(" ");
+         var name = "";
+         for(i = 0; i < str.length-2; i++) {
+             name = name + str[i];
+             if(i !== str.length-3){
+                 name = name + " ";
+             }
+         }
+         
+          localStorage.setItem("an",name);
+          localStorage.setItem("id",str[str.length-2]);
+          localStorage.setItem("pop",str[str.length-1]);
+       window.open ('Artist.html','_self',false);
+     }
+    });
+     });
+</script>
     </body>

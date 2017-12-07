@@ -8,10 +8,14 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
-     <script language="javascript" src="app.js">
+     <script language="javascript">
     //localStorage.setItem("storageName",getInput); use later for spotify api to save the artist id or song id.
 window.onload = function myFunction() {
+  //  console.log("hi");
     var elem = document.getElementById("artname");
+    elem.innerHTML = localStorage.getItem("an");
+   // console.log(localStorage.getItem("an"));
+    //  console.log("hi");
   // go();
     
     
