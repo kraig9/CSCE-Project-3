@@ -109,9 +109,17 @@ io.on('connection', function(socket){
      socket.on('join', function(msg){
     console.log('message: ' + msg);
        var str = msg.split(" ");
-         console.log(str[0]);
-         console.log(str[1]);
-   var url1 = 'https://api.spotify.com/v1/search?q=' + str[0] + '&type=' + str[1] +'&limit=1&offset=0';
+        var artname = "";
+         for(i = 0; i < str.length - 1; i++){
+             artname = artname + str[i];
+             if(str.length - 2 != i){
+                 artname = artname + " ";
+             }
+         }
+         if(str[str.length - 1] === "Song"){
+             str[str.length - 1] = "track";
+         }
+   var url1 = 'https://api.spotify.com/v1/search?q=' + artname + '&type=' + str[str.length-1] +'&limit=1&offset=0';
         //console.log(url1);
        // console.log("test");
    var request = require('request'); // "Request" library
@@ -144,14 +152,26 @@ request.post(authOptions, function(error, response, body) {
       json: true
     };
     request.get(options, function(error, response, body) {
+        if(str[str.length-1] == "Artist"){
        console.log(body.artists.items[0].name);
        // res.send("something else");
         //res.write(body.artists.items[0].name);
        // res.
-        aname = body.artists.items[0].name + ' ' + body.artists.items[0].id + ' ' + body.artists.items[0].popularity;
+        aname = body.artists.items[0].name + ' ' + body.artists.items[0].id + ' ' + body.artists.items[0].popularity + ' ' + body.artists.items[0].images[0].url;
       console.log(body.artists.items[0].id);
         console.log(body.artists.items[0].popularity);
+            console.log(body.artists.items[0].images[0].url);
+            
        io.emit('chat message', aname);
+        }
+        if(str[str.length-1] == "track"){
+            console.log(body.tracks.items[0].name);
+            console.log(body.tracks.items[0].popularity);
+            console.log(body.tracks.items[0].id);
+            console.log(body.tracks.items[0].album.images[0].url);
+            var sts = body.tracks.items[0].name + ' ' + body.tracks.items[0].popularity + ' ' + body.tracks.items[0].id + ' ' + body.tracks.items[0].album.images[0].url;
+            io.emit('chat message', sts);
+        }
     });
   }
   

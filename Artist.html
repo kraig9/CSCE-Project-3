@@ -13,7 +13,11 @@
 window.onload = function myFunction() {
   //  console.log("hi");
     var elem = document.getElementById("artname");
+     var elem2 = document.getElementById("artimg");
+   // var elem2 = document.getElementById("artpop");
     elem.innerHTML = localStorage.getItem("an");
+    elem2.src = localStorage.getItem("img");
+    
    // console.log(localStorage.getItem("an"));
     //  console.log("hi");
   // go();
@@ -24,23 +28,25 @@ window.onload = function myFunction() {
     </script>
 </head>
 
-
-
+<img src="microphone.jpg" style="height:100%; width:100%;position:absolute;margin:0; z-index:-1">
+<div style="background-color:black; opacity: 0.7;">
 <div style="text-align:center;">
-<img src="Kanye-chain.jpg" style ="height:300px; width:400px; text-align:center">
-</div>
-<div style="text-align:center;">
-<h1 id="artname" onload="myFunction()">K</h1>
+    
+<img id="artimg" src="Kanye-chain.jpg" style ="height:300px; width:400px; text-align:center">
 </div>
 
 <div style="text-align:center;">
-<h4>Popularity</h4>
+<h1 id="artname" onload="myFunction()" style="color:white">K</h1>
 </div>
 
+<div style="text-align:center;">
+<h4 style="color:white">Popularity</h4>
+</div>
+</div>
 <div style="text-align:center; padding-left:20%">
 <div style="width:75%; " class="progress">
     
-  <div  class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+  <div  id="artpop"class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
     
 </div>
 </div>

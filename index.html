@@ -56,18 +56,37 @@
      if(elem1.value === "Artist"){
          var str = msg.split(" ");
          var name = "";
-         for(i = 0; i < str.length-2; i++) {
+         for(i = 0; i < str.length-3; i++) {
              name = name + str[i];
-             if(i !== str.length-3){
+             if(i !== str.length-4){
                  name = name + " ";
              }
          }
          
           localStorage.setItem("an",name);
-          localStorage.setItem("id",str[str.length-2]);
-          localStorage.setItem("pop",str[str.length-1]);
+          localStorage.setItem("id",str[str.length-3]);
+          localStorage.setItem("pop",str[str.length-2]);
+         localStorage.setItem("img",str[str.length-1]);
        window.open ('Artist.html','_self',false);
      }
+     
+      if(elem1.value === "Song"){
+       /*  var str = msg.split(" ");
+         var name = "";
+         for(i = 0; i < str.length-3; i++) {
+             name = name + str[i];
+             if(i !== str.length-4){
+                 name = name + " ";
+             }
+         }
+         
+          localStorage.setItem("an",name);
+          localStorage.setItem("id",str[str.length-3]);
+          localStorage.setItem("pop",str[str.length-2]);
+         localStorage.setItem("img",str[str.length-1]);*/
+       window.open ('Song.html','_self',false);
+     }
+     
     });
      });
 </script>
