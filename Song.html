@@ -19,12 +19,12 @@
 -->
 <img src="songimg.jpg" style="height:100%; width:100%;position:absolute;margin:0; z-index:-1">
 <div style="background-color:black; opacity: 0.7;">
-<div id="picture"style="text-align:center;">
-<img src="680d4985b1fccdf554ab887abb63a453.1000x1000x1.jpg" style ="height:300px; width:400px; text-align:center">
+<div id="picture_div"style="text-align:center;">
+<img src="680d4985b1fccdf554ab887abb63a453.1000x1000x1.jpg" id="picture" style ="height:300px; width:400px; text-align:center">
 </div>
 
 <div style="text-align:center;">
-<h1 style="color:white"> Flashing Lights </h1>
+<h1 id="song_name"style="color:white"> Flashing Lights </h1>
 </div>
 
 <div style="text-align:center;">
@@ -66,7 +66,17 @@
  <script language="javascript">
  
  var video_id;
- var query = 'Flashing Lights';
+ var query;
+ window.onload = function myFunction() {
+  
+    var elem = document.getElementById("song_name");
+    var elem2 = document.getElementById("picture");
+   
+    elem.innerHTML = localStorage.getItem("an_2");
+    elem2.src = localStorage.getItem("img_2");
+ }
+	 
+	 
  $(document).ready(function() {
     $('#play_btn').on('click', function(event) {
 	
