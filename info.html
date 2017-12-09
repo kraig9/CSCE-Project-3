@@ -7,17 +7,13 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-
-<body style="margin:0;">
-<img src="info-background.jpg" style="height:100%; width:100%;position:absolute;margin:0; z-index:-1">
 
 <script>
 $(document).ready(function(){
- 
+	var artist = localStorage.getItem("an");
     $.ajax({
         type: "GET",
-        url: "https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=Kanye_West&callback=?",
+        url: "https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page="+artist+"&callback=?",
         contentType: "application/json; charset=utf-8",
         async: false,
         dataType: "json",
@@ -30,4 +26,8 @@ $(document).ready(function(){
     });
 });
 </script>
+</head>
+
+<body style="margin:0;">
+<img src="info-background.jpg" style="height:100%; width:100%;position:absolute;margin:0; z-index:-1">
 </body>
