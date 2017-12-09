@@ -110,6 +110,7 @@ io.on('connection', function(socket){
     console.log('message: ' + msg);
        var str = msg.split(" ");
         var artname = "";
+          var sts = "";
          for(i = 0; i < str.length - 1; i++){
              artname = artname + str[i];
              if(str.length - 2 != i){
@@ -157,7 +158,8 @@ request.post(authOptions, function(error, response, body) {
        // res.send("something else");
         //res.write(body.artists.items[0].name);
        // res.
-        aname = body.artists.items[0].name + ' ' + body.artists.items[0].id + ' ' + body.artists.items[0].popularity + ' ' + body.artists.items[0].images[0].url;
+        aname = body.artists.items[0].name + '~' + body.artists.items[0].id + '~' + body.artists.items[0].popularity + '~' + body.artists.items[0].images[0].url;
+           
         var url2 = 'https://api.spotify.com/v1/artists/' + body.artists.items[0].id + '/related-artists';
         var url3 = '';
       console.log(body.artists.items[0].id);
@@ -187,7 +189,7 @@ request.post(authOptions, function(error, response, body) {
         console.log(body.artists[2].name);
         console.log(body.artists[3].name);
         console.log(body.artists[4].name);
-        aname = aname + ' ' + body.artists[0].name + ' ' + body.artists[1].name + ' ' + body.artists[2].name + ' ' + body.artists[3].name + ' ' + body.artists[4].name;
+        aname = aname + '~' + body.artists[0].name + '~' + body.artists[1].name + '~' + body.artists[2].name + '~' + body.artists[3].name + '~' + body.artists[4].name;
  
             //////
             request.post(authOptions, function(error, response, body) {
@@ -209,7 +211,10 @@ request.post(authOptions, function(error, response, body) {
         console.log(body.tracks[2].name);
         console.log(body.tracks[3].name);
         console.log(body.tracks[4].name);
-        aname = aname + ' ' + body.tracks[0].name + ' ' + body.tracks[1].name + ' ' + body.tracks[2].name + ' ' + body.tracks[3].name + ' ' + body.tracks[4].name;
+        aname = aname + '~' + body.tracks[0].name + '~' + body.tracks[1].name + '~' + body.tracks[2].name + '~' + body.tracks[3].name + '~' + body.tracks[4].name;
+        
+        io.emit('chat message', aname);
+        console.log(aname);
     });
   }
 });
@@ -219,15 +224,74 @@ request.post(authOptions, function(error, response, body) {
 });       
             
             //////
-       io.emit('chat message', aname);
+
         }
         if(str[str.length-1] == "track"){
-            console.log(body.tracks.items[0].name);
-            console.log(body.tracks.items[0].popularity);
-            console.log(body.tracks.items[0].id);
-            console.log(body.tracks.items[0].album.images[0].url);
-            var sts = body.tracks.items[0].name + ' ' + body.tracks.items[0].popularity + ' ' + body.tracks.items[0].id + ' ' + body.tracks.items[0].album.images[0].url;
-            io.emit('chat message', sts);
+           // sts = aname;
+            //console.log(body.tracks.items[0].artists[0].id);
+     var url2 = 'https://api.spotify.com/v1/artists/' + body.tracks.items[0].artists[0].id + '/related-artists';
+    sts =  body.tracks.items[0].name + '~' + body.tracks.items[0].id + '~' + body.tracks.items[0].popularity + '~' + body.tracks.items[0].album.images[0].url;
+            request.post(authOptions, function(error, response, body) {
+  if (!error && response.statusCode === 200) {
+ 
+    // use the access token to access the Spotify Web API
+    var token = body.access_token;
+    var options = {
+      url: url2,
+      headers: {
+        'Authorization': 'Bearer ' + token
+      },
+      json: true
+    };
+    request.get(options, function(error, response, body) {
+       // console.log(body);
+        //console.log(url2);
+       // console.log(body.artists[0].name);
+        //console.log(body.artists[0].id);
+        url3 = 'https://api.spotify.com/v1/artists/' + body.artists[0].id + '/top-tracks?country=US'
+       // console.log(body.artists[1].name);
+       // console.log(body.artists[2].name);
+       // console.log(body.artists[3].name);
+       // console.log(body.artists[4].name);
+        sts = sts + '~' + body.artists[0].name + '~' + body.artists[1].name + '~' + body.artists[2].name + '~' + body.artists[3].name + '~' + body.artists[4].name;
+ 
+            //////
+            request.post(authOptions, function(error, response, body) {
+  if (!error && response.statusCode === 200) {
+
+    // use the access token to access the Spotify Web API
+    var token = body.access_token;
+    var options = {
+      url: url3,
+      headers: {
+        'Authorization': 'Bearer ' + token
+      },
+      json: true
+    };
+    request.get(options, function(error, response, body) {
+       // console.log(body);
+        console.log(body.tracks[0].name);
+        console.log(body.tracks[1].name);
+        console.log(body.tracks[2].name);
+        console.log(body.tracks[3].name);
+        console.log(body.tracks[4].name);
+        sts = sts + '~' + body.tracks[0].name + '~' + body.tracks[1].name + '~' + body.tracks[2].name + '~' + body.tracks[3].name + '~' + body.tracks[4].name;
+        
+       
+       
+        io.emit('chat message', sts);
+        console.log(sts);
+    });
+  }
+});
+            
+   });
+  }
+});       
+            
+            
+          
+            
         }
     });
   }

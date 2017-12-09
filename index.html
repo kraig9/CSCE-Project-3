@@ -54,36 +54,47 @@
  socket.on('chat message', function(msg){
      console.log(msg);
      if(elem1.value === "Artist"){
-         var str = msg.split(" ");
+         var str = msg.split("~");
          var name = "";
-         for(i = 0; i < str.length-3; i++) {
-             name = name + str[i];
-             if(i !== str.length-4){
-                 name = name + " ";
-             }
-         }
          
-          localStorage.setItem("an",name);
-          localStorage.setItem("id",str[str.length-3]);
-          localStorage.setItem("pop",str[str.length-2]);
-         localStorage.setItem("img",str[str.length-1]);
+        
+          localStorage.setItem("an",str[0]);
+          localStorage.setItem("id",str[1]);
+          localStorage.setItem("pop",str[2]);
+         localStorage.setItem("img",str[3]);
+        localStorage.setItem("ra1",str[4]);
+         localStorage.setItem("ra2",str[5]);
+         localStorage.setItem("ra3",str[6]);
+         localStorage.setItem("ra4",str[7]);
+         localStorage.setItem("ra5",str[8]);
+          localStorage.setItem("tr1",str[9]);
+          localStorage.setItem("tr2",str[10]);
+          localStorage.setItem("tr3",str[11]);
+          localStorage.setItem("tr4",str[12]);
+          localStorage.setItem("tr5",str[13]);
+        
        window.open ('Artist.html','_self',false);
      }
      
       if(elem1.value === "Song"){
-         var str = msg.split(" ");
+         var str = msg.split("~");
          var name = "";
-         for(i = 0; i < str.length-3; i++) {
-             name = name + str[i];
-             if(i !== str.length-4){
-                 name = name + " ";
-             }
-         }
+        
          
-          localStorage.setItem("an_2",name);
-          localStorage.setItem("id_2",str[str.length-3]);
-          localStorage.setItem("pop_2",str[str.length-2]);
-         localStorage.setItem("img_2",str[str.length-1]);
+          localStorage.setItem("an_2",str[0]);
+          localStorage.setItem("id_2",str[1]);
+          localStorage.setItem("pop_2",str[2]);
+         localStorage.setItem("img_2",str[3]);
+           localStorage.setItem("ra1",str[4]);
+         localStorage.setItem("ra2",str[5]);
+         localStorage.setItem("ra3",str[6]);
+         localStorage.setItem("ra4",str[7]);
+         localStorage.setItem("ra5",str[8]);
+          localStorage.setItem("tr1",str[9]);
+          localStorage.setItem("tr2",str[10]);
+          localStorage.setItem("tr3",str[11]);
+          localStorage.setItem("tr4",str[12]);
+          localStorage.setItem("tr5",str[13]);
        window.open ('Song.html','_self',false);
      }
      
