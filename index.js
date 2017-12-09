@@ -158,10 +158,67 @@ request.post(authOptions, function(error, response, body) {
         //res.write(body.artists.items[0].name);
        // res.
         aname = body.artists.items[0].name + ' ' + body.artists.items[0].id + ' ' + body.artists.items[0].popularity + ' ' + body.artists.items[0].images[0].url;
+        var url2 = 'https://api.spotify.com/v1/artists/' + body.artists.items[0].id + '/related-artists';
+        var url3 = '';
       console.log(body.artists.items[0].id);
         console.log(body.artists.items[0].popularity);
             console.log(body.artists.items[0].images[0].url);
+            ///////
             
+            
+request.post(authOptions, function(error, response, body) {
+  if (!error && response.statusCode === 200) {
+
+    // use the access token to access the Spotify Web API
+    var token = body.access_token;
+    var options = {
+      url: url2,
+      headers: {
+        'Authorization': 'Bearer ' + token
+      },
+      json: true
+    };
+    request.get(options, function(error, response, body) {
+       // console.log(body);
+        console.log(body.artists[0].name);
+        console.log(body.artists[0].id);
+        url3 = 'https://api.spotify.com/v1/artists/' + body.artists[0].id + '/top-tracks?country=US'
+        console.log(body.artists[1].name);
+        console.log(body.artists[2].name);
+        console.log(body.artists[3].name);
+        console.log(body.artists[4].name);
+        aname = aname + ' ' + body.artists[0].name + ' ' + body.artists[1].name + ' ' + body.artists[2].name + ' ' + body.artists[3].name + ' ' + body.artists[4].name;
+ 
+            //////
+            request.post(authOptions, function(error, response, body) {
+  if (!error && response.statusCode === 200) {
+
+    // use the access token to access the Spotify Web API
+    var token = body.access_token;
+    var options = {
+      url: url3,
+      headers: {
+        'Authorization': 'Bearer ' + token
+      },
+      json: true
+    };
+    request.get(options, function(error, response, body) {
+       // console.log(body);
+        console.log(body.tracks[0].name);
+        console.log(body.tracks[1].name);
+        console.log(body.tracks[2].name);
+        console.log(body.tracks[3].name);
+        console.log(body.tracks[4].name);
+        aname = aname + ' ' + body.tracks[0].name + ' ' + body.tracks[1].name + ' ' + body.tracks[2].name + ' ' + body.tracks[3].name + ' ' + body.tracks[4].name;
+    });
+  }
+});
+            
+   });
+  }
+});       
+            
+            //////
        io.emit('chat message', aname);
         }
         if(str[str.length-1] == "track"){

@@ -10,7 +10,7 @@
 </head>
 
 <script>
-$(document).ready(function(){
+window.onload = function myFunction() {
  
     $.ajax({
         type: "GET",
@@ -25,5 +25,5 @@ $(document).ready(function(){
         error: function (errorMessage) {
         }
     });
-});
+};
 </script>
