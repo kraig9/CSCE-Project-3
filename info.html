@@ -23,7 +23,7 @@ $(document).ready(function(){
         dataType: "json",
         success: function (data, textStatus, jqXHR) {
            //document.write(data.parse.text["*"].replace(/</g, "&lt").replace(/>/g, "&gt"));
-		   document.write("<img src=\"info-background.jpg\" style=\"height:100%; width:100%;position:absolute;margin:0; z-index:-1\"\>" + "<div style=\"text-align:center\">" + data.parse.text["*"] + "<div style=\"text-align:center\">");
+		   document.write("<img src=\"info-background.jpg\" style=\"height:100%; width:100%;position:absolute;margin:0;\"\>" + "<div style=\"text-align:center\">" + data.parse.text["*"] + "<div style=\"text-align:center\">");
 		   //wikiInfo = document.createElement(data.parse.text["*"]);
 		   //document.body.innerHTML =+ wikiInfo;
 		   //document.body.appendChild(wikiInfo);
