@@ -93,7 +93,7 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var fs = require('fs');
-
+var x = 1;
 app.get('/', function(req, res){
     fs.readFile('./index.html', function (err, html) {
          if (err) throw err; 
@@ -236,10 +236,14 @@ request.post(authOptions, function(error, response, body) {
          console.log(body.items[3].name);
          console.log(body.items[4].name);
         aname = aname + '~' + body.items[0].name + '~' + body.items[1].name + '~' + body.items[2].name + '~' + body.items[3].name + '~' + body.items[4].name;
+        if(x===1){
         io.emit('chat message', aname);
+        // res.end();
         console.log(aname);
-        
-        
+       // aname = "";
+        console.log(" ");
+            x = 0;
+        }
     });
   }
 });
@@ -307,9 +311,14 @@ request.post(authOptions, function(error, response, body) {
         sts = sts + '~' + body.tracks[0].name + '~' + body.tracks[1].name + '~' + body.tracks[2].name + '~' + body.tracks[3].name + '~' + body.tracks[4].name;
         
        
-       
+       if(x === 1){
         io.emit('chat message', sts);
+       //  res.end();
         console.log(sts);
+        sts="";
+           x=0;
+       }
+        
     });
   }
 });
@@ -335,6 +344,11 @@ request.post(authOptions, function(error, response, body) {
     // io.emit('chat message', msg);
   });
    // url1 = '';
+     socket.on('done', function(msg){
+         console.log("user left");
+       x=1;
+     });
+    
 });
 
     });
