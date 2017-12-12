@@ -25,7 +25,7 @@ $(document).ready(function(){
            //document.write(data.parse.text["*"].replace(/</g, "&lt").replace(/>/g, "&gt"));
 		   //document.write(\"<img src=\"info-background.jpg\" style=\"height:100%; width:100%;position:absolute;margin:0; z-index:-1\"\>\"+<div style=\"text-align:center\">" + data.parse.text["*"]);
 		   wikiInfo = data.parse.text["*"];
-		   document.body.innerHTML =+ page;
+		   document.body.innerHTML =+ wikiInfo;
         },
         error: function (errorMessage) {
         }
