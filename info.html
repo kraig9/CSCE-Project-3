@@ -24,8 +24,9 @@ $(document).ready(function(){
         success: function (data, textStatus, jqXHR) {
            //document.write(data.parse.text["*"].replace(/</g, "&lt").replace(/>/g, "&gt"));
 		   //document.write(\"<img src=\"info-background.jpg\" style=\"height:100%; width:100%;position:absolute;margin:0; z-index:-1\"\>\"+<div style=\"text-align:center\">" + data.parse.text["*"]);
-		   wikiInfo = data.parse.text["*"];
-		   document.body.innerHTML =+ wikiInfo;
+		   wikiInfo = document.createTextNode(data.parse.text["*"]);
+		   //document.body.innerHTML =+ wikiInfo;
+		   document.body.appendChild(wikiInfo);
         },
         error: function (errorMessage) {
         }
