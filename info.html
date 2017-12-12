@@ -9,10 +9,12 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<img src="info-background.jpg" style=height:100%; width:100%;position:absolute;margin:0; z-index:-1>
 <div>
 <script>
 $(document).ready(function(){
 	var artist = localStorage.getItem("an");
+	var wikiInfo;
     $.ajax({
         type: "GET",
         url: "https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page="+artist+"&callback=?",
@@ -21,7 +23,9 @@ $(document).ready(function(){
         dataType: "json",
         success: function (data, textStatus, jqXHR) {
            //document.write(data.parse.text["*"].replace(/</g, "&lt").replace(/>/g, "&gt"));
-		   document.write(\"<img src=\"info-background.jpg\" style=\"height:100%; width:100%;position:absolute;margin:0; z-index:-1\"\>\"+<div style=\"text-align:center\">" + data.parse.text["*"]);
+		   //document.write(\"<img src=\"info-background.jpg\" style=\"height:100%; width:100%;position:absolute;margin:0; z-index:-1\"\>\"+<div style=\"text-align:center\">" + data.parse.text["*"]);
+		   wikiInfo = data.parse.text["*"];
+		   document.body.innerHTML =+ page;
         },
         error: function (errorMessage) {
         }
