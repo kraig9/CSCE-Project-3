@@ -30,7 +30,7 @@
   <span class="input-group-addon" id="basic-addon1"> 
     
   </span>
-  <input id="inp" type="text" class="form-control" placeholder="Artistname" aria-label="Artistname" aria-describedby="basic-addon1" style="width:80%">
+  <input id="inp" type="text" class="form-control" placeholder="Artist or Song" aria-label="Artistname" aria-describedby="basic-addon1" style="width:80%">
 </div>
 <div style="text-align:center;">
     <p></p>
@@ -42,6 +42,17 @@
     
    <script src="/socket.io/socket.io.js"></script>
 <script language="javascript">
+    window.onload = function myFunction() {
+        var elem = localStorage.getItem("redo");
+         var elem1 = document.getElementById("inp");
+        if (elem.length>0){
+            elem1.value=elem;
+            localStorage.setItem("redo","");
+        }
+    }
+    
+    
+    
      $('#btn1').on('click', function(event) {
          var elem = document.getElementById("inp");
          var elem1 = document.getElementById("selec");

@@ -52,6 +52,59 @@ window.onload = function myFunction() {
     
     
 }
+ function but1() {
+    // console.log("hi");
+     var elem = document.getElementById("song1");
+     console.log(elem.innerHTML);
+       localStorage.setItem("redo",elem.innerHTML);
+       window.open ('index.html','_self',false);
+ };
+function but2() {
+     var elem = document.getElementById("song2");
+     localStorage.setItem("redo",elem.innerHTML);
+       window.open ('index.html','_self',false);
+ };
+function but3() {
+     var elem = document.getElementById("song3");
+     localStorage.setItem("redo",elem.innerHTML);
+       window.open ('index.html','_self',false);
+ };
+function but4() {
+     var elem = document.getElementById("song4");
+     localStorage.setItem("redo",elem.innerHTML);
+       window.open ('index.html','_self',false);
+ };
+function but5() {
+     var elem = document.getElementById("song5");
+     localStorage.setItem("redo",elem.innerHTML);
+       window.open ('index.html','_self',false);
+ };
+function but6() {
+     var elem = document.getElementById("a1");
+     localStorage.setItem("redo",elem.innerHTML);
+       window.open ('index.html','_self',false);
+ };
+function but7() {
+    var elem = document.getElementById("a2");
+     localStorage.setItem("redo",elem.innerHTML);
+       window.open ('index.html','_self',false);
+ };
+function but8() {
+     var elem = document.getElementById("a3");
+     localStorage.setItem("redo",elem.innerHTML);
+       window.open ('index.html','_self',false);
+ };
+function but9() {
+     var elem = document.getElementById("a4");
+     localStorage.setItem("redo",elem.innerHTML);
+       window.open ('index.html','_self',false);
+ };
+function but10() {
+     var elem = document.getElementById("a5");
+     localStorage.setItem("redo",elem.innerHTML);
+      window.open ('index.html','_self',false);
+ };
+
     </script>
     
     
@@ -67,28 +120,35 @@ window.onload = function myFunction() {
     <tr style="color:white">
       <th scope="col" style="color:white">#</th>
       <th scope="col" style="color:white">  Songs</th>
+    <th scope="col" style="color:white"> </th>
     </tr>
   </thead>
   <tbody>
     <tr style="color:white">
       <th scope="row" style="color:white">1</th>
       <td id="song1" style="color:white">All of The Lights</td>
+    <td> <button id="r1" type="button" class="btn btn-secondary" style="float:right;color:black" onClick="but1()">More Recommendations</button></td>
     </tr>
     <tr style="color:white">
       <th scope="row" style="color:white">2</th>
       <td id="song2" style="color:white">Gold Digger</td>
+    <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r2" onClick="but2()">More Recommendations</button></td>
     </tr>
     <tr style="color:white">
       <th scope="row" style="color:white">3</th>
       <td id="song3" style="color:white">Good Morning</td>
+    <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r3" onClick="but3()">More Recommendations</button></td>
     </tr>
        <tr style="color:white">
       <th scope="row" style="color:white">4</th>
       <td id="song4" style="color:white">Glory</td>
+    <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r4" onClick="but4()">More Recommendations</button></td>
     </tr >
        <tr style="color:white">
       <th scope="row" style="color:white">5</th>
       <td id="song5" style="color:white">Heartless</td>
+    <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r5" onClick="but5()">More Recommendations</button></td>
+           
     </tr>
   </tbody>
 </table>
@@ -98,28 +158,34 @@ window.onload = function myFunction() {
     <tr style="color:white">
       <th scope="col" style="color:white">#</th>
       <th scope="col" style="color:white">Artists</th>
+        <th scope="col" style="color:white"> </th>
     </tr>
   </thead>
   <tbody>
     <tr style="color:white">
       <th scope="row" style="color:white">1</th>
       <td id="a1" style="color:white">Jay-Z</td>
+    <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r6" onClick="but6()">More Recommendations</button></td>
     </tr>
     <tr style="color:white">
       <th scope="row" style="color:white">2</th>
       <td id="a2" style="color:white">Eminem</td>
+    <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r7" onClick="but7()">More Recommendations</button></td>
     </tr>
     <tr style="color:white">
       <th scope="row" style="color:white">3</th>
       <td id="a3" style="color:white">Drake</td>
+    <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r8" onClick="but8()">More Recommendations</button></td>
     </tr>
        <tr style="color:white">
       <th scope="row" style="color:white">4</th>
       <td id="a4" style="color:white">Kendrik Lamar</td>
+    <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r9" onClick="but9()">More Recommendations</button></td>
     </tr>
        <tr style="color:white">
       <th scope="row" style="color:white">3</th>
       <td id="a5" style="color:white">J. Cole</td>
+    <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r10" onClick="but10()">More Recommendations</button></td>
     </tr>
   </tbody>
 </table>
