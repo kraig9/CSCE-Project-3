@@ -7,6 +7,22 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script language="javascript">
+    
+        window.onload = function myFunction() {
+            var elem = document.getElementById("alb1");
+             var elem2 = document.getElementById("alb2");
+             var elem3 = document.getElementById("alb3");
+             var elem4 = document.getElementById("alb4");
+             var elem5 = document.getElementById("alb5");
+            elem.innerHTML = localStorage.getItem("al1");
+            elem2.innerHTML = localStorage.getItem("al2");
+            elem3.innerHTML = localStorage.getItem("al3");
+            elem4.innerHTML = localStorage.getItem("al4");
+            elem5.innerHTML = localStorage.getItem("al5");
+        }
+    
+    </script>
 </head>
 <img src="recimg.jpg" style="height:100%; width:100%;position:absolute;margin:0; z-index:-1">
 <div style="text-align:center;">
@@ -24,23 +40,23 @@
   <tbody>
     <tr style="color:white">
       <th scope="row" style="color:white">1</th>
-      <td style="color:white">Graduation</td>
+      <td id="alb1" style="color:white">Graduation</td>
     </tr>
     <tr style="color:white">
       <th scope="row" style="color:white">2</th>
-      <td style="color:white">The College Dropout</td>
+      <td id="alb2" style="color:white">The College Dropout</td>
     </tr>
     <tr style="color:white">
       <th scope="row" style="color:white">3</th>
-      <td style="color:white">808s and Heartbreak</td>
+      <td id="alb3" style="color:white">808s and Heartbreak</td>
     </tr>
        <tr style="color:white">
       <th scope="row" style="color:white">4</th>
-      <td style="color:white">Yeezus</td>
+      <td id="alb4" style="color:white">Yeezus</td>
     </tr>
        <tr style="color:white">
       <th scope="row" style="color:white">5</th>
-      <td style="color:white">My Beautiful Dark Twisted Fantasy</td>
+      <td id="alb5" style="color:white">My Beautiful Dark Twisted Fantasy</td>
     </tr>
   </tbody>
 </table>

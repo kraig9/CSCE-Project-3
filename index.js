@@ -159,7 +159,7 @@ request.post(authOptions, function(error, response, body) {
         //res.write(body.artists.items[0].name);
        // res.
         aname = body.artists.items[0].name + '~' + body.artists.items[0].id + '~' + body.artists.items[0].popularity + '~' + body.artists.items[0].images[0].url;
-           
+        var idd = body.artists.items[0].id;
         var url2 = 'https://api.spotify.com/v1/artists/' + body.artists.items[0].id + '/related-artists';
         var url3 = '';
       console.log(body.artists.items[0].id);
@@ -213,8 +213,37 @@ request.post(authOptions, function(error, response, body) {
         console.log(body.tracks[4].name);
         aname = aname + '~' + body.tracks[0].name + '~' + body.tracks[1].name + '~' + body.tracks[2].name + '~' + body.tracks[3].name + '~' + body.tracks[4].name;
         
+       
+ request.post(authOptions, function(error, response, body) {
+  if (!error && response.statusCode === 200) {
+
+    // use the access token to access the Spotify Web API
+    var token = body.access_token;
+    var options = {
+      url: 'https://api.spotify.com/v1/artists/' + idd + '/albums?album_type=album&market=US&limit=5&offset=0',
+      headers: {
+        'Authorization': 'Bearer ' + token
+      },
+      json: true
+    };
+    request.get(options, function(error, response, body) {
+       // console.log(body);
+   
+      
+        console.log(body.items[0].name);  
+         console.log(body.items[1].name);
+         console.log(body.items[2].name);
+         console.log(body.items[3].name);
+         console.log(body.items[4].name);
+        aname = aname + '~' + body.items[0].name + '~' + body.items[1].name + '~' + body.items[2].name + '~' + body.items[3].name + '~' + body.items[4].name;
         io.emit('chat message', aname);
         console.log(aname);
+        
+        
+    });
+  }
+});
+        
     });
   }
 });
