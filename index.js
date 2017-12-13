@@ -94,6 +94,9 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var fs = require('fs');
 var x = 1;
+var x1 = 1;
+var y = 1;
+var z = 1;
 app.get('/', function(req, res){
     fs.readFile('./index.html', function (err, html) {
          if (err) throw err; 
@@ -158,7 +161,10 @@ request.post(authOptions, function(error, response, body) {
        // res.send("something else");
         //res.write(body.artists.items[0].name);
        // res.
+             if(x===1){
+                 x=0;
         aname = body.artists.items[0].name + '~' + body.artists.items[0].id + '~' + body.artists.items[0].popularity + '~' + body.artists.items[0].images[0].url;
+             }
         var idd = body.artists.items[0].id;
         var url2 = 'https://api.spotify.com/v1/artists/' + body.artists.items[0].id + '/related-artists';
         var url3 = '';
@@ -189,8 +195,10 @@ request.post(authOptions, function(error, response, body) {
         console.log(body.artists[2].name);
         console.log(body.artists[3].name);
         console.log(body.artists[4].name);
+         if(x1===1){
+             x1 = 0;
         aname = aname + '~' + body.artists[0].name + '~' + body.artists[1].name + '~' + body.artists[2].name + '~' + body.artists[3].name + '~' + body.artists[4].name;
- 
+         }
             //////
             request.post(authOptions, function(error, response, body) {
   if (!error && response.statusCode === 200) {
@@ -211,8 +219,10 @@ request.post(authOptions, function(error, response, body) {
         console.log(body.tracks[2].name);
         console.log(body.tracks[3].name);
         console.log(body.tracks[4].name);
+         if(y===1){
+             y=0;
         aname = aname + '~' + body.tracks[0].name + '~' + body.tracks[1].name + '~' + body.tracks[2].name + '~' + body.tracks[3].name + '~' + body.tracks[4].name;
-        
+         }
        
  request.post(authOptions, function(error, response, body) {
   if (!error && response.statusCode === 200) {
@@ -235,15 +245,18 @@ request.post(authOptions, function(error, response, body) {
          console.log(body.items[2].name);
          console.log(body.items[3].name);
          console.log(body.items[4].name);
+        if(z===1){
+            z = 0;
         aname = aname + '~' + body.items[0].name + '~' + body.items[1].name + '~' + body.items[2].name + '~' + body.items[3].name + '~' + body.items[4].name;
-        if(x===1){
+       //  }
+       // if(x===1){
         io.emit('chat message', aname);
         // res.end();
         console.log(aname);
-       // aname = "";
+        aname = "";
         console.log(" ");
-            x = 0;
-        }
+          //  x = 0;
+      }
     });
   }
 });
@@ -347,6 +360,10 @@ request.post(authOptions, function(error, response, body) {
      socket.on('done', function(msg){
          console.log("user left");
        x=1;
+        y=1;
+         x1=1;
+         z=1;
+         socket.disconnect(0);
      });
     
 });
