@@ -7,108 +7,120 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-     <script language="javascript">
-    //localStorage.setItem("storageName",getInput); use later for spotify api to save the artist id or song id.
-window.onload = function myFunction() {
-  //  console.log("hi");
-   var s1 = localStorage.getItem("tr1");
-   var s2 = localStorage.getItem("tr2");
-    var s3 = localStorage.getItem("tr3");
-    var s4 = localStorage.getItem("tr4");
-    var s5 = localStorage.getItem("tr5");
-   var as1 = localStorage.getItem("ra1");
-   var as2 = localStorage.getItem("ra2");
-   var as3 = localStorage.getItem("ra3");
-   var as4 = localStorage.getItem("ra4");
-   var as5 = localStorage.getItem("ra5");
-   
-    var elem1 = document.getElementById("song1");
-    var elem2 = document.getElementById("song2");
-    var elem3 = document.getElementById("song3");
-    var elem4 = document.getElementById("song4");
-    var elem5 = document.getElementById("song5");
-    
-    var elem6 = document.getElementById("a1");
-    var elem7 = document.getElementById("a2");
-    var elem8 = document.getElementById("a3");
-    var elem9 = document.getElementById("a4");
-    var elem10 = document.getElementById("a5");
-    
-      elem1.innerHTML = s1;
-      elem2.innerHTML = s2;
-      elem3.innerHTML = s3;
-      elem4.innerHTML = s4;
-      elem5.innerHTML = s5;
-    
-    elem6.innerHTML = as1;
-    elem7.innerHTML = as2;
-    elem8.innerHTML = as3;
-    elem9.innerHTML = as4;
-    elem10.innerHTML = as5;
-   // console.log(localStorage.getItem("an"));
-    //  console.log("hi");
-  // go();
-    
-    
-    
-}
- function but1() {
-    // console.log("hi");
-     var elem = document.getElementById("song1");
-     console.log(elem.innerHTML);
-       localStorage.setItem("redo",elem.innerHTML);
-       window.open ('index.html','_self',false);
- };
-function but2() {
-     var elem = document.getElementById("song2");
-     localStorage.setItem("redo",elem.innerHTML);
-       window.open ('index.html','_self',false);
- };
-function but3() {
-     var elem = document.getElementById("song3");
-     localStorage.setItem("redo",elem.innerHTML);
-       window.open ('index.html','_self',false);
- };
-function but4() {
-     var elem = document.getElementById("song4");
-     localStorage.setItem("redo",elem.innerHTML);
-       window.open ('index.html','_self',false);
- };
-function but5() {
-     var elem = document.getElementById("song5");
-     localStorage.setItem("redo",elem.innerHTML);
-       window.open ('index.html','_self',false);
- };
-function but6() {
-     var elem = document.getElementById("a1");
-     localStorage.setItem("redo",elem.innerHTML);
-       window.open ('index.html','_self',false);
- };
-function but7() {
-    var elem = document.getElementById("a2");
-     localStorage.setItem("redo",elem.innerHTML);
-       window.open ('index.html','_self',false);
- };
-function but8() {
-     var elem = document.getElementById("a3");
-     localStorage.setItem("redo",elem.innerHTML);
-       window.open ('index.html','_self',false);
- };
-function but9() {
-     var elem = document.getElementById("a4");
-     localStorage.setItem("redo",elem.innerHTML);
-       window.open ('index.html','_self',false);
- };
-function but10() {
-     var elem = document.getElementById("a5");
-     localStorage.setItem("redo",elem.innerHTML);
-      window.open ('index.html','_self',false);
- };
 
-    </script>
+<script language="javascript">
+    //localStorage.setItem("storageName",getInput); use later for spotify api to save the artist id or song id.
+    window.onload = function myFunction() {
+        //  console.log("hi");
+        var s1 = localStorage.getItem("tr1");
+        var s2 = localStorage.getItem("tr2");
+        var s3 = localStorage.getItem("tr3");
+        var s4 = localStorage.getItem("tr4");
+        var s5 = localStorage.getItem("tr5");
+        var as1 = localStorage.getItem("ra1");
+        var as2 = localStorage.getItem("ra2");
+        var as3 = localStorage.getItem("ra3");
+        var as4 = localStorage.getItem("ra4");
+        var as5 = localStorage.getItem("ra5");
+
+        var elem1 = document.getElementById("song1");
+        var elem2 = document.getElementById("song2");
+        var elem3 = document.getElementById("song3");
+        var elem4 = document.getElementById("song4");
+        var elem5 = document.getElementById("song5");
+
+        var elem6 = document.getElementById("a1");
+        var elem7 = document.getElementById("a2");
+        var elem8 = document.getElementById("a3");
+        var elem9 = document.getElementById("a4");
+        var elem10 = document.getElementById("a5");
+
+        elem1.innerHTML = s1;
+        elem2.innerHTML = s2;
+        elem3.innerHTML = s3;
+        elem4.innerHTML = s4;
+        elem5.innerHTML = s5;
+
+        elem6.innerHTML = as1;
+        elem7.innerHTML = as2;
+        elem8.innerHTML = as3;
+        elem9.innerHTML = as4;
+        elem10.innerHTML = as5;
+        // console.log(localStorage.getItem("an"));
+        //  console.log("hi");
+        // go();
+
+
+
+    }
+
+    function but1() {
+        // console.log("hi");
+        var elem = document.getElementById("song1");
+        console.log(elem.innerHTML);
+        localStorage.setItem("redo", elem.innerHTML);
+        window.open('index.html', '_self', false);
+    };
+
+    function but2() {
+        var elem = document.getElementById("song2");
+        localStorage.setItem("redo", elem.innerHTML);
+        window.open('index.html', '_self', false);
+    };
+
+    function but3() {
+        var elem = document.getElementById("song3");
+        localStorage.setItem("redo", elem.innerHTML);
+        window.open('index.html', '_self', false);
+    };
+
+    function but4() {
+        var elem = document.getElementById("song4");
+        localStorage.setItem("redo", elem.innerHTML);
+        window.open('index.html', '_self', false);
+    };
+
+    function but5() {
+        var elem = document.getElementById("song5");
+        localStorage.setItem("redo", elem.innerHTML);
+        window.open('index.html', '_self', false);
+    };
+
+    function but6() {
+        var elem = document.getElementById("a1");
+        localStorage.setItem("redo", elem.innerHTML);
+        window.open('index.html', '_self', false);
+    };
+
+    function but7() {
+        var elem = document.getElementById("a2");
+        localStorage.setItem("redo", elem.innerHTML);
+        window.open('index.html', '_self', false);
+    };
+
+    function but8() {
+        var elem = document.getElementById("a3");
+        localStorage.setItem("redo", elem.innerHTML);
+        window.open('index.html', '_self', false);
+    };
+
+    function but9() {
+        var elem = document.getElementById("a4");
+        localStorage.setItem("redo", elem.innerHTML);
+        window.open('index.html', '_self', false);
+    };
+
+    function but10() {
+        var elem = document.getElementById("a5");
+        localStorage.setItem("redo", elem.innerHTML);
+        window.open('index.html', '_self', false);
+    };
+</script>
     
     
 </head>
+
+
 <img src="recimg.jpg" style="height:100%; width:100%;position:absolute;margin:0; z-index:-1">
 <div style="text-align:center;">
     <h1 style="color:white">Recommendations</h1>
@@ -116,81 +128,81 @@ function but10() {
 
 <div style="background-color:black; opacity:.7">
     <p></p>
-<div style="text-align:center">
- <a href="index.html"> <button type="button" id = "btn search-btn" class="btn btn-secondary">New Search</button></a>
+    <div style="text-align:center">
+        <a href="index.html"> <button type="button" id = "btn search-btn" class="btn btn-secondary">New Search</button></a>
     </div>
-<table class="table" stlye="display:inline-block; ">
-  <thead>
-    <tr style="color:white">
-      <th scope="col" style="color:white">#</th>
-      <th scope="col" style="color:white">  Songs</th>
-    <th scope="col" style="color:white"> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="color:white">
-      <th scope="row" style="color:white">1</th>
-      <td id="song1" style="color:white">All of The Lights</td>
-    <td> <button id="r1" type="button" class="btn btn-secondary" style="float:right;color:black" onClick="but1()">Related Recommendations</button></td>
-    </tr>
-    <tr style="color:white">
-      <th scope="row" style="color:white">2</th>
-      <td id="song2" style="color:white">Gold Digger</td>
-    <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r2" onClick="but2()">Related Recommendations</button></td>
-    </tr>
-    <tr style="color:white">
-      <th scope="row" style="color:white">3</th>
-      <td id="song3" style="color:white">Good Morning</td>
-    <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r3" onClick="but3()">Related Recommendations</button></td>
-    </tr>
-       <tr style="color:white">
-      <th scope="row" style="color:white">4</th>
-      <td id="song4" style="color:white">Glory</td>
-    <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r4" onClick="but4()">Related Recommendations</button></td>
-    </tr >
-       <tr style="color:white">
-      <th scope="row" style="color:white">5</th>
-      <td id="song5" style="color:white">Heartless</td>
-    <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r5" onClick="but5()">Related Recommendations</button></td>
-           
-    </tr>
-  </tbody>
-</table>
+    <table class="table" stlye="display:inline-block; ">
+        <thead>
+            <tr style="color:white">
+                <th scope="col" style="color:white">#</th>
+                <th scope="col" style="color:white"> Songs</th>
+                <th scope="col" style="color:white"> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="color:white">
+                <th scope="row" style="color:white">1</th>
+                <td id="song1" style="color:white">All of The Lights</td>
+                <td> <button id="r1" type="button" class="btn btn-secondary" style="float:right;color:black" onClick="but1()">Related Recommendations</button></td>
+            </tr>
+            <tr style="color:white">
+                <th scope="row" style="color:white">2</th>
+                <td id="song2" style="color:white">Gold Digger</td>
+                <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r2" onClick="but2()">Related Recommendations</button></td>
+            </tr>
+            <tr style="color:white">
+                <th scope="row" style="color:white">3</th>
+                <td id="song3" style="color:white">Good Morning</td>
+                <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r3" onClick="but3()">Related Recommendations</button></td>
+            </tr>
+            <tr style="color:white">
+                <th scope="row" style="color:white">4</th>
+                <td id="song4" style="color:white">Glory</td>
+                <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r4" onClick="but4()">Related Recommendations</button></td>
+            </tr>
+            <tr style="color:white">
+                <th scope="row" style="color:white">5</th>
+                <td id="song5" style="color:white">Heartless</td>
+                <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r5" onClick="but5()">Related Recommendations</button></td>
 
-<table class="table" stlye="display:inline-block;">
-  <thead>
-    <tr style="color:white">
-      <th scope="col" style="color:white">#</th>
-      <th scope="col" style="color:white">Artists</th>
-        <th scope="col" style="color:white"> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="color:white">
-      <th scope="row" style="color:white">1</th>
-      <td id="a1" style="color:white">Jay-Z</td>
-    <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r6" onClick="but6()">Related Recommendations</button></td>
-    </tr>
-    <tr style="color:white">
-      <th scope="row" style="color:white">2</th>
-      <td id="a2" style="color:white">Eminem</td>
-    <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r7" onClick="but7()">Related Recommendations</button></td>
-    </tr>
-    <tr style="color:white">
-      <th scope="row" style="color:white">3</th>
-      <td id="a3" style="color:white">Drake</td>
-    <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r8" onClick="but8()">Related Recommendations</button></td>
-    </tr>
-       <tr style="color:white">
-      <th scope="row" style="color:white">4</th>
-      <td id="a4" style="color:white">Kendrik Lamar</td>
-    <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r9" onClick="but9()">Related Recommendations</button></td>
-    </tr>
-       <tr style="color:white">
-      <th scope="row" style="color:white">3</th>
-      <td id="a5" style="color:white">J. Cole</td>
-    <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r10" onClick="but10()">Related Recommendations</button></td>
-    </tr>
-  </tbody>
-</table>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table" stlye="display:inline-block;">
+        <thead>
+            <tr style="color:white">
+                <th scope="col" style="color:white">#</th>
+                <th scope="col" style="color:white">Artists</th>
+                <th scope="col" style="color:white"> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="color:white">
+                <th scope="row" style="color:white">1</th>
+                <td id="a1" style="color:white">Jay-Z</td>
+                <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r6" onClick="but6()">Related Recommendations</button></td>
+            </tr>
+            <tr style="color:white">
+                <th scope="row" style="color:white">2</th>
+                <td id="a2" style="color:white">Eminem</td>
+                <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r7" onClick="but7()">Related Recommendations</button></td>
+            </tr>
+            <tr style="color:white">
+                <th scope="row" style="color:white">3</th>
+                <td id="a3" style="color:white">Drake</td>
+                <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r8" onClick="but8()">Related Recommendations</button></td>
+            </tr>
+            <tr style="color:white">
+                <th scope="row" style="color:white">4</th>
+                <td id="a4" style="color:white">Kendrik Lamar</td>
+                <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r9" onClick="but9()">Related Recommendations</button></td>
+            </tr>
+            <tr style="color:white">
+                <th scope="row" style="color:white">3</th>
+                <td id="a5" style="color:white">J. Cole</td>
+                <td> <button type="button" class="btn btn-secondary" style="float:right;color:black" id="r10" onClick="but10()">Related Recommendations</button></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
