@@ -1,135 +1,136 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
-<img src="songimg.jpg" style="height:100%; width:100%;position:absolute;margin:0; z-index:-1">
-<div style="background-color:black; opacity: 0.7;">
-    <div id="picture_div" style="text-align:center;">
-        <img src="680d4985b1fccdf554ab887abb63a453.1000x1000x1.jpg" id="picture" style="height:300px; width:400px; text-align:center">
+    <img src="songimg.jpg" style="height:100%; width:100%;position:absolute;margin:0; z-index:-1">
+    <div style="background-color:black; opacity: 0.7;">
+        <div id="picture_div" style="text-align:center;">
+            <img src="680d4985b1fccdf554ab887abb63a453.1000x1000x1.jpg" id="picture" style="height:300px; width:400px; text-align:center">
+        </div>
+
+        <div style="text-align:center;">
+            <h1 id="song_name" style="color:white"> Flashing Lights </h1>
+        </div>
+
+        <div style="text-align:center;">
+            <h3 style="color:white">Popularity</h3>
+        </div>
+
     </div>
+
+    <div style="text-align:center; padding-left:20%">
+        <div style="width:75%; " class="progress">
+
+            <div id="artpop" class="progress-bar" role="progressbar" style="width: 100%;background-color:green" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+
+        </div>
+    </div>
+
 
     <div style="text-align:center;">
-        <h1 id="song_name" style="color:white"> Flashing Lights </h1>
-    </div>
-
-    <div style="text-align:center;">
-        <h3 style="color:white">Popularity</h3>
-    </div>
-
-</div>
-
-<div style="text-align:center; padding-left:20%">
-    <div style="width:75%; " class="progress">
-
-        <div id="artpop" class="progress-bar" role="progressbar" style="width: 100%;background-color:green" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-
-    </div>
-</div>
-
-
-<div style="text-align:center;">
-    <div class="btn-group" role="group" aria-label="Basic example" style="text-align:center">
-        <a href="Recommendations.html">
+        <div class="btn-group" role="group" aria-label="Basic example" style="text-align:center">
+            <a href="Recommendations.html">
             <button type="button" id="btn-search-btn" class="btn btn-secondary">Get Recommendations</button>
         </a>
-        <br>
-        <br>
+            <br>
+            <br>
+        </div>
     </div>
-</div>
 
-<div style="text-align:center;">
-	<button type="button" id="play_btn" class="btn btn-secondary">Show Video</button>
-	<div id="results">
-</div>
-</div>
+    <div style="text-align:center;">
+        <button type="button" id="play_btn" class="btn btn-secondary">Show Video</button>
+        <div id="results">
+        </div>
+    </div>
 
-<br>
-<br>
+    <br>
+    <br>
 
-<div style="text-align:center;">
-    <div id="player" align="center"> </div>
-</div>
-	
-<script language="javascript">
-    var video_id;
-    var query;
-	
-    // Geeting variables from previous page
-    window.onload = function myFunction() {
+    <div style="text-align:center;">
+        <div id="player" align="center"> </div>
+    </div>
 
-        var elem = document.getElementById("song_name");
-        var elem2 = document.getElementById("picture");
-        var elem3 = document.getElementById("artpop");
-        elem.innerHTML = localStorage.getItem("an_2");
-        elem2.src = localStorage.getItem("img_2");
-        elem3.style.width = localStorage.getItem("pop_2") + '%';
-        query = elem.innerHTML;
-    }
+    <script language="javascript">
+        var video_id;
+        var query;
 
-    console.log(query);
+        // Geeting variables from previous page
+        window.onload = function myFunction() {
 
+            var elem = document.getElementById("song_name");
+            var elem2 = document.getElementById("picture");
+            var elem3 = document.getElementById("artpop");
+            elem.innerHTML = localStorage.getItem("an_2");
+            elem2.src = localStorage.getItem("img_2");
+            elem3.style.width = localStorage.getItem("pop_2") + '%';
+            query = elem.innerHTML;
+        }
+
+        console.log(query);
 
 
 
-    $(document).ready(function() {
-        $('#play_btn').on('click', function(event) {
 
-	    // AJAX get reuqest to the youtube data api to get videoid 
-            $.ajax({
-                type: 'GET',
-                url: "https://www.googleapis.com/youtube/v3/search?q=" + query + "&videoEmbeddable=true&maxResults=2&type=video&key=AIzaSyAZTXsjpn0u4oMKU65t-92Nxt6vg3tQecc&part=snippet",
-                dataType: "json",
-                success: function(resultData) {
-                    video_id = resultData.items[0].id.videoId;
-                    console.log(video_id);
-                    //alert(resultData.items[0].id.videoId);
+        $(document).ready(function() {
+            $('#play_btn').on('click', function(event) {
 
-                    var tag = document.createElement('script');
-		    
-		    // Getting ready to trigger the iFrame api
-                    tag.src = "https://www.youtube.com/iframe_api";
-                    var firstScriptTag = document.getElementsByTagName('script')[0];
-                    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-                    $('#play_btn').remove();
-                    $('#picture').remove();
+                // AJAX get reuqest to the youtube data api to get videoid 
+                $.ajax({
+                    type: 'GET',
+                    url: "https://www.googleapis.com/youtube/v3/search?q=" + query + "&videoEmbeddable=true&maxResults=2&type=video&key=AIzaSyAZTXsjpn0u4oMKU65t-92Nxt6vg3tQecc&part=snippet",
+                    dataType: "json",
+                    success: function(resultData) {
+                        video_id = resultData.items[0].id.videoId;
+                        console.log(video_id);
+                        //alert(resultData.items[0].id.videoId);
+
+                        var tag = document.createElement('script');
+
+                        // Getting ready to trigger the iFrame api
+                        tag.src = "https://www.youtube.com/iframe_api";
+                        var firstScriptTag = document.getElementsByTagName('script')[0];
+                        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+                        $('#play_btn').remove();
+                        $('#picture').remove();
 
 
-                },
+                    },
 
-                error: function() {
-                    alert("Did not work");
-                    console.log("Error retrieving spotify API");
-                }
+                    error: function() {
+                        alert("Did not work");
+                        console.log("Error retrieving spotify API");
+                    }
 
+
+                });
+
+                //saveData.error(function() { alert("Something went wrong"); });
 
             });
-
-            //saveData.error(function() { alert("Something went wrong"); });
-
         });
-    });
 
 
-    var player;
-	
-    // Youtube iFrame api request and putting response in player div	
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-            height: '290',
-            width: '540',
-            videoId: video_id
-            /*
+        var player;
+
+        // Youtube iFrame api request and putting response in player div	
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '290',
+                width: '540',
+                videoId: video_id
+                /*
 	
             events: {
             	'onReady': onPlayerReady,
@@ -139,43 +140,37 @@
 
 
 
-        });
-    }
-
-
-    function onPlayerReady(event) {
-        event.target.playVideo();
-    }
-
-
-    var done = false;
-
-    // controlling video play
-    function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-            setTimeout(stopVideo, 60000);
-            done = true;
+            });
         }
-    }
-
-    // stopping the video
-    function stopVideo() {
-        player.stopVideo();
-    }
-    
-
-</script>
-    
-    
-	<p></p>
-	<div style="text-align:center">
-	    <a href="index.html"> <button type="button" id = "btn search-btn" class="btn btn-secondary">New Search</button></a>
-	</div>
- 
- </body>
- </html>
 
 
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
 
 
+        var done = false;
 
+        // controlling video play
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING && !done) {
+                setTimeout(stopVideo, 60000);
+                done = true;
+            }
+        }
+
+        // stopping the video
+        function stopVideo() {
+            player.stopVideo();
+        }
+    </script>
+
+
+    <p></p>
+    <div style="text-align:center">
+        <a href="index.html"> <button type="button" id = "btn search-btn" class="btn btn-secondary">New Search</button></a>
+    </div>
+
+</body>
+
+</html>
