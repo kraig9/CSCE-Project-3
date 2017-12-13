@@ -1,34 +1,34 @@
 <head>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
-<script language="javascript">
-    //localStorage.setItem("storageName",getInput); use later for spotify api to save the artist id or song id.
-    window.onload = function myFunction() {
-        //  console.log("hi");
-        var elem = document.getElementById("artname");
-        var elem2 = document.getElementById("artimg");
-        var elem3 = document.getElementById("artpop");
-        elem.innerHTML = localStorage.getItem("an");
-        elem2.src = localStorage.getItem("img");
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
-        elem3.style.width = localStorage.getItem("pop") + '%';
-        // console.log(localStorage.getItem("an"));
-        //  console.log("hi");
-        // go();
+    <script language="javascript">
+        //localStorage.setItem("storageName",getInput); use later for spotify api to save the artist id or song id.
+        window.onload = function myFunction() {
+            //  console.log("hi");
+            var elem = document.getElementById("artname");
+            var elem2 = document.getElementById("artimg");
+            var elem3 = document.getElementById("artpop");
+            elem.innerHTML = localStorage.getItem("an");
+            elem2.src = localStorage.getItem("img");
 
 
+            elem3.style.width = localStorage.getItem("pop") + '%';
+            // console.log(localStorage.getItem("an"));
+            //  console.log("hi");
+            // go();
 
-    }
-</script>
-    
+
+
+        }
+    </script>
+
 </head>
 
 
