@@ -8,68 +8,69 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
-     <script language="javascript">
+<script language="javascript">
     //localStorage.setItem("storageName",getInput); use later for spotify api to save the artist id or song id.
-window.onload = function myFunction() {
-  //  console.log("hi");
-    var elem = document.getElementById("artname");
-     var elem2 = document.getElementById("artimg");
-    var elem3 = document.getElementById("artpop");
-    elem.innerHTML = localStorage.getItem("an");
-    elem2.src = localStorage.getItem("img");
-   
-  
-    elem3.style.width = localStorage.getItem("pop")+'%';
-   // console.log(localStorage.getItem("an"));
-    //  console.log("hi");
-  // go();
+    window.onload = function myFunction() {
+        //  console.log("hi");
+        var elem = document.getElementById("artname");
+        var elem2 = document.getElementById("artimg");
+        var elem3 = document.getElementById("artpop");
+        elem.innerHTML = localStorage.getItem("an");
+        elem2.src = localStorage.getItem("img");
+
+
+        elem3.style.width = localStorage.getItem("pop") + '%';
+        // console.log(localStorage.getItem("an"));
+        //  console.log("hi");
+        // go();
+
+
+
+    }
+</script>
     
-    
-    
-}
-    </script>
 </head>
 
 <img src="microphone.jpg" style="height:100%; width:100%;position:absolute;margin:0; z-index:-1">
 
 <div style="background-color:black; opacity: 0.7;">
 
-<div style="text-align:center;">
-    
-<img id="artimg" src="Kanye-chain.jpg" style ="height:300px; width:400px; text-align:center">
-</div>
+    <div style="text-align:center;">
 
-<div style="text-align:center;">
-<h1 id="artname" onload="myFunction()" style="color:white">K</h1>
-</div>
+        <img id="artimg" src="Kanye-chain.jpg" style="height:300px; width:400px; text-align:center">
+    </div>
 
-<div style="text-align:center;">
-<h3 style="color:white">Popularity</h3>
-</div>
+    <div style="text-align:center;">
+        <h1 id="artname" onload="myFunction()" style="color:white">K</h1>
+    </div>
+
+    <div style="text-align:center;">
+        <h3 style="color:white">Popularity</h3>
+    </div>
 </div>
 <div style="text-align:center; padding-left:20%;">
-<div style="width:75%;color:green " class="progress" >
-    
-  <div  id="artpop" class="progress-bar" role="progressbar" style="width: 100%; background-color:green" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="background-color:red"></div>
-    
-</div>
+    <div style="width:75%;color:green " class="progress">
+
+        <div id="artpop" class="progress-bar" role="progressbar" style="width: 100%; background-color:green" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="background-color:red"></div>
+
+    </div>
 </div>
 
 
 <div style="text-align:center;">
-<div class="btn-group" role="group" aria-label="Basic example" style="text-align:center">
-    <a href="info.html"><button type="button" id = "btn search-btn" class="btn btn-secondary">More Info</button></a>
-</div>
+    <div class="btn-group" role="group" aria-label="Basic example" style="text-align:center">
+        <a href="info.html"><button type="button" id = "btn search-btn" class="btn btn-secondary">More Info</button></a>
+    </div>
 
-<div class="btn-group" role="group" aria-label="Basic example" style="text-align:center">
-    <a href="Recommendations.html"><button type="button" id = "btn search-btn" class="btn btn-secondary">Get Recommendations</button></a>
-</div>
+    <div class="btn-group" role="group" aria-label="Basic example" style="text-align:center">
+        <a href="Recommendations.html"><button type="button" id = "btn search-btn" class="btn btn-secondary">Get Recommendations</button></a>
+    </div>
 
-<div class="btn-group" role="group" aria-label="Basic example" style="text-align:center">
-    <a href="Albums.html"> <button type="button" id = "btn search-btn" class="btn btn-secondary">Get Albums</button></a>
-</div>
+    <div class="btn-group" role="group" aria-label="Basic example" style="text-align:center">
+        <a href="Albums.html"> <button type="button" id = "btn search-btn" class="btn btn-secondary">Get Albums</button></a>
+    </div>
 </div>
 <p></p>
 <div style="text-align:center">
- <a href="index.html"> <button type="button" id = "btn search-btn" class="btn btn-secondary">New Search</button></a>
-    </div>
+    <a href="index.html"> <button type="button" id = "btn search-btn" class="btn btn-secondary">New Search</button></a>
+</div>
