@@ -359,10 +359,13 @@ request.post(authOptions, function(error, response, body) {
    // url1 = '';
      socket.on('done', function(msg){
          console.log("user left");
-       x=1;
+      
+         setTimeout(function() {
+    x=1;
         y=1;
          x1=1;
          z=1;
+}, 1000);
          socket.disconnect(0);
      });
     
