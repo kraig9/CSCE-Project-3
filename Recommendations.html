@@ -1,123 +1,123 @@
 <head>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script language="javascript">
-    //localStorage.setItem("storageName",getInput); use later for spotify api to save the artist id or song id.
-    window.onload = function myFunction() {
-        //  console.log("hi");
-        var s1 = localStorage.getItem("tr1");
-        var s2 = localStorage.getItem("tr2");
-        var s3 = localStorage.getItem("tr3");
-        var s4 = localStorage.getItem("tr4");
-        var s5 = localStorage.getItem("tr5");
-        var as1 = localStorage.getItem("ra1");
-        var as2 = localStorage.getItem("ra2");
-        var as3 = localStorage.getItem("ra3");
-        var as4 = localStorage.getItem("ra4");
-        var as5 = localStorage.getItem("ra5");
+    <script language="javascript">
+        //localStorage.setItem("storageName",getInput); use later for spotify api to save the artist id or song id.
+        window.onload = function myFunction() {
+            //  console.log("hi");
+            var s1 = localStorage.getItem("tr1");
+            var s2 = localStorage.getItem("tr2");
+            var s3 = localStorage.getItem("tr3");
+            var s4 = localStorage.getItem("tr4");
+            var s5 = localStorage.getItem("tr5");
+            var as1 = localStorage.getItem("ra1");
+            var as2 = localStorage.getItem("ra2");
+            var as3 = localStorage.getItem("ra3");
+            var as4 = localStorage.getItem("ra4");
+            var as5 = localStorage.getItem("ra5");
 
-        var elem1 = document.getElementById("song1");
-        var elem2 = document.getElementById("song2");
-        var elem3 = document.getElementById("song3");
-        var elem4 = document.getElementById("song4");
-        var elem5 = document.getElementById("song5");
+            var elem1 = document.getElementById("song1");
+            var elem2 = document.getElementById("song2");
+            var elem3 = document.getElementById("song3");
+            var elem4 = document.getElementById("song4");
+            var elem5 = document.getElementById("song5");
 
-        var elem6 = document.getElementById("a1");
-        var elem7 = document.getElementById("a2");
-        var elem8 = document.getElementById("a3");
-        var elem9 = document.getElementById("a4");
-        var elem10 = document.getElementById("a5");
+            var elem6 = document.getElementById("a1");
+            var elem7 = document.getElementById("a2");
+            var elem8 = document.getElementById("a3");
+            var elem9 = document.getElementById("a4");
+            var elem10 = document.getElementById("a5");
 
-        elem1.innerHTML = s1;
-        elem2.innerHTML = s2;
-        elem3.innerHTML = s3;
-        elem4.innerHTML = s4;
-        elem5.innerHTML = s5;
+            elem1.innerHTML = s1;
+            elem2.innerHTML = s2;
+            elem3.innerHTML = s3;
+            elem4.innerHTML = s4;
+            elem5.innerHTML = s5;
 
-        elem6.innerHTML = as1;
-        elem7.innerHTML = as2;
-        elem8.innerHTML = as3;
-        elem9.innerHTML = as4;
-        elem10.innerHTML = as5;
-        // console.log(localStorage.getItem("an"));
-        //  console.log("hi");
-        // go();
+            elem6.innerHTML = as1;
+            elem7.innerHTML = as2;
+            elem8.innerHTML = as3;
+            elem9.innerHTML = as4;
+            elem10.innerHTML = as5;
+            // console.log(localStorage.getItem("an"));
+            //  console.log("hi");
+            // go();
 
 
 
-    }
+        }
 
-    function but1() {
-        // console.log("hi");
-        var elem = document.getElementById("song1");
-        console.log(elem.innerHTML);
-        localStorage.setItem("redo", elem.innerHTML);
-        window.open('index.html', '_self', false);
-    };
+        function but1() {
+            // console.log("hi");
+            var elem = document.getElementById("song1");
+            console.log(elem.innerHTML);
+            localStorage.setItem("redo", elem.innerHTML);
+            window.open('index.html', '_self', false);
+        };
 
-    function but2() {
-        var elem = document.getElementById("song2");
-        localStorage.setItem("redo", elem.innerHTML);
-        window.open('index.html', '_self', false);
-    };
+        function but2() {
+            var elem = document.getElementById("song2");
+            localStorage.setItem("redo", elem.innerHTML);
+            window.open('index.html', '_self', false);
+        };
 
-    function but3() {
-        var elem = document.getElementById("song3");
-        localStorage.setItem("redo", elem.innerHTML);
-        window.open('index.html', '_self', false);
-    };
+        function but3() {
+            var elem = document.getElementById("song3");
+            localStorage.setItem("redo", elem.innerHTML);
+            window.open('index.html', '_self', false);
+        };
 
-    function but4() {
-        var elem = document.getElementById("song4");
-        localStorage.setItem("redo", elem.innerHTML);
-        window.open('index.html', '_self', false);
-    };
+        function but4() {
+            var elem = document.getElementById("song4");
+            localStorage.setItem("redo", elem.innerHTML);
+            window.open('index.html', '_self', false);
+        };
 
-    function but5() {
-        var elem = document.getElementById("song5");
-        localStorage.setItem("redo", elem.innerHTML);
-        window.open('index.html', '_self', false);
-    };
+        function but5() {
+            var elem = document.getElementById("song5");
+            localStorage.setItem("redo", elem.innerHTML);
+            window.open('index.html', '_self', false);
+        };
 
-    function but6() {
-        var elem = document.getElementById("a1");
-        localStorage.setItem("redo", elem.innerHTML);
-        window.open('index.html', '_self', false);
-    };
+        function but6() {
+            var elem = document.getElementById("a1");
+            localStorage.setItem("redo", elem.innerHTML);
+            window.open('index.html', '_self', false);
+        };
 
-    function but7() {
-        var elem = document.getElementById("a2");
-        localStorage.setItem("redo", elem.innerHTML);
-        window.open('index.html', '_self', false);
-    };
+        function but7() {
+            var elem = document.getElementById("a2");
+            localStorage.setItem("redo", elem.innerHTML);
+            window.open('index.html', '_self', false);
+        };
 
-    function but8() {
-        var elem = document.getElementById("a3");
-        localStorage.setItem("redo", elem.innerHTML);
-        window.open('index.html', '_self', false);
-    };
+        function but8() {
+            var elem = document.getElementById("a3");
+            localStorage.setItem("redo", elem.innerHTML);
+            window.open('index.html', '_self', false);
+        };
 
-    function but9() {
-        var elem = document.getElementById("a4");
-        localStorage.setItem("redo", elem.innerHTML);
-        window.open('index.html', '_self', false);
-    };
+        function but9() {
+            var elem = document.getElementById("a4");
+            localStorage.setItem("redo", elem.innerHTML);
+            window.open('index.html', '_self', false);
+        };
 
-    function but10() {
-        var elem = document.getElementById("a5");
-        localStorage.setItem("redo", elem.innerHTML);
-        window.open('index.html', '_self', false);
-    };
-</script>
-    
-    
+        function but10() {
+            var elem = document.getElementById("a5");
+            localStorage.setItem("redo", elem.innerHTML);
+            window.open('index.html', '_self', false);
+        };
+    </script>
+
+
 </head>
 
 
