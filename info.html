@@ -2,19 +2,20 @@
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+    
+  
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
-<!--<img src="info-background.jpg" style=height:100%; width:100%;position:absolute;margin:0; z-index:-1> -->
-<div>
-<script>
+    <script>
+       // document.getElementById('table_' + id).innerHTML = "";
+        
 $(document).ready(function(){
 	var artist = localStorage.getItem("an");
 	var wikiInfo;
+    var elem = document.getElementById("text1");
     $.ajax({
         type: "GET",
         url: "https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page="+artist+"&callback=?",
@@ -22,8 +23,11 @@ $(document).ready(function(){
         async: false,
         dataType: "json",
         success: function (data, textStatus, jqXHR) {
+           // alert(data.parse.title);
+            //alert(data.parse.text[*]);
+            elem.innerHTML = data.parse.text["*"];
            //document.write(data.parse.text["*"].replace(/</g, "&lt").replace(/>/g, "&gt"));
-		   document.write("<img src=\"info-background.jpg\" style=\"height:100%; width:100%;position:absolute;margin:0; z-index:-1\"\>" + "<div style=\"text-align:center\">" + data.parse.text["*"] + "<div style=\"text-align:center\">");
+		  // document.write("<img src=\"info-background.jpg\" style=\"height:100%; width:100%;position:absolute;margin:0; z-index:-1\"\>" + "<div style=\"text-align:center\">" + data.parse.text["*"] + "<div style=\"text-align:center\">");
 		   //wikiInfo = document.createElement(data.parse.text["*"]);
 		   //document.body.innerHTML =+ wikiInfo;
 		   //document.body.appendChild(wikiInfo);
@@ -31,9 +35,23 @@ $(document).ready(function(){
         error: function (errorMessage) {
         }
     });
+  
 });
+
+       
 </script>
+</head>
+<body>
+    <div>
+<img src="info-background.jpg" style="height:100%; width:100%; min-height: 100%; min-width: 1024px; width: 100%; height: auto; position: fixed; top: 0; left: 0;margin:0; z-index:-1"> 
 </div>
+
+
+    <div style="background-color:black; opacity:.7;">
+    <div style="text-align:center; color:white; "id="text1"></div>
+   
+    
+    </div>
 </body>
 <!--<body style="margin:0;" background="info-background.jpg">
 </body>
